@@ -20,7 +20,6 @@ public class PropertiesLoader {
         try {
             properties.load(inputStream);
         } catch (IOException e) {
-            // 我不认为这个报错会出现
             e.printStackTrace();
         }
 
@@ -72,6 +71,11 @@ public class PropertiesLoader {
         String ScrcpyWindowY = properties.getProperty("ScrcpyWindowY");
         if (ScrcpyWindowY != null && !ScrcpyWindowY.isBlank()) {
             PropertiesStorage.ScrcpyWindowY = Integer.parseInt(ScrcpyWindowY);
+        }
+
+        String CapturingIntervalMM = properties.getProperty("CapturingIntervalMM");
+        if (CapturingIntervalMM != null && !CapturingIntervalMM.isBlank()) {
+            PropertiesStorage.CapturingIntervalMM = Integer.parseInt(CapturingIntervalMM);
         }
     }
 }

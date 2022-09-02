@@ -21,3 +21,4 @@ An experimental Umamusume Helper, based on JDK17, Scrcpy and OpenCV.
 1. https://stackoverflow.com/questions/464593/how-to-capture-selected-screen-of-other-application-using-java
 2. https://github.com/Genymobile/scrcpy
 3. https://www.bilibili.com/video/BV19v411T7sR
+4. https://stackoverflow.com/questions/17865465/how-do-i-draw-an-image-to-a-jpanel-or-jframe

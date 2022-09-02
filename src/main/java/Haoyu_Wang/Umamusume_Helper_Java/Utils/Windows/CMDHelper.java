@@ -20,12 +20,12 @@ public class CMDHelper {
      */
     public static String oneTimeExecute(String commandLine) {
         String line;
-        StringBuffer stringBuffer = new StringBuffer();
+        StringBuffer outputBuffer = new StringBuffer();
         try {
             Process process = runtime.exec(commandLine);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream(), StandardCharsets.UTF_8));
             while ((line = bufferedReader.readLine()) != null) {
-                stringBuffer.append(line + "\n");
+                outputBuffer.append(line + "\n");
             }
 
             // 这里可能会造成死锁
@@ -33,6 +33,10 @@ public class CMDHelper {
         } catch (IOException | InterruptedException exception) {
             exception.printStackTrace();
         }
-        return stringBuffer.toString();
+        return outputBuffer.toString();
+    }
+
+    public static CMDThread newThreadExecute(String commandLine) {
+        return new CMDThread(commandLine);
     }
 }

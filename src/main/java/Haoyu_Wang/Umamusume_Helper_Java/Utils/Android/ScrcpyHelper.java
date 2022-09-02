@@ -2,6 +2,7 @@ package Haoyu_Wang.Umamusume_Helper_Java.Utils.Android;
 
 import Haoyu_Wang.Umamusume_Helper_Java.PropertiesStorage;
 import Haoyu_Wang.Umamusume_Helper_Java.Utils.Windows.CMDHelper;
+import Haoyu_Wang.Umamusume_Helper_Java.Utils.Windows.CMDThread;
 
 /**
  * 连接手机并进行实时屏幕抓取的工具类。
@@ -11,6 +12,7 @@ import Haoyu_Wang.Umamusume_Helper_Java.Utils.Windows.CMDHelper;
  * @see <a href="https://github.com/Genymobile/scrcpy">Genymobile/scrcpy</a>
  */
 public class ScrcpyHelper {
+    private static CMDThread scrcpyServer = null;
 
     /**
      * 根据PropertiesStorage中提供的AndroidDeviceIP和AndroidDevicePort，使用ScrcpyPath中提供的adb.exe无线连接安卓设备。
@@ -107,6 +109,17 @@ public class ScrcpyHelper {
         if (PropertiesStorage.ScrcpyWindowX == -1) {
             scrcpyCLI += "--window-x=0 --window-y=0 ";
         }
-        CMDHelper.oneTimeExecute(PropertiesStorage.ScrcpyPath + scrcpyCLI);
+        scrcpyServer = CMDHelper.newThreadExecute(PropertiesStorage.ScrcpyPath + scrcpyCLI);
+        scrcpyServer.start();
+//        while (scrcpyServer.getExitStatus() == null) {
+//            // Do nothing
+//        }
+//        scrcpyServer.stop();
     }
+
+    public static CMDThread getServerThread() {
+        return scrcpyServer;
+    }
+
+
 }

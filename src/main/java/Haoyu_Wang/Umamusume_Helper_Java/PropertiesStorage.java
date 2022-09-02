@@ -66,4 +66,9 @@ public class PropertiesStorage {
      * @deprecated 懒了，这个比X那个还没用
      */
     public static int ScrcpyWindowY = 0;
+
+    /**
+     * @implNote 截图间隔（毫秒）
+     */
+    public static int CapturingIntervalMM = 1000;
 }
