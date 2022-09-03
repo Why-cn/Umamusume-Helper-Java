@@ -55,9 +55,8 @@ public class ImageMonitor extends Thread {
             try {
                 Thread.sleep(PropertiesStorage.CapturingIntervalMM);
                 capturedImage = ScreenCapturer.capture();
-                System.out.println("captured");
+                System.out.println("capturedImage: " + capturedImage.getWidth() + " * " + capturedImage.getHeight());
                 panel.paint(capturedImage.createGraphics());
-                frame.repaint();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -65,8 +64,5 @@ public class ImageMonitor extends Thread {
         Integer exitStatus = ScrcpyHelper.getServerThread().getExitStatus();
         System.out.println("getExitStatus: " + (exitStatus == null ? "null" : exitStatus));
         System.exit(exitStatus == null ? 1 : exitStatus);
-//        capturedImage = ScreenCapturer.capture();
-//
-//        frame.add(panel);
     }
 }

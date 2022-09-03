@@ -71,4 +71,14 @@ public class PropertiesStorage {
      * @implNote 截图间隔（毫秒）
      */
     public static int CapturingIntervalMM = 1000;
+
+    /**
+     * @implNote 缺省截图高度（像素）
+     */
+    public static int DefaultHeight = 1600;
+
+    /**
+     * @implNote 缺省截图宽度（像素）
+     */
+    public static int DefaultWidth = 900;
 }

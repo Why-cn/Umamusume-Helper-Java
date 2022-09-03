@@ -22,3 +22,6 @@ An experimental Umamusume Helper, based on JDK17, Scrcpy and OpenCV.
 2. https://github.com/Genymobile/scrcpy
 3. https://www.bilibili.com/video/BV19v411T7sR
 4. https://stackoverflow.com/questions/17865465/how-do-i-draw-an-image-to-a-jpanel-or-jframe
+5. https://github.com/openjfx/samples/tree/master/IDE/IntelliJ/Modular/Maven
+6. https://www.wingmei.cn/tag/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0javafx/
+7. https://stackoverflow.com/questions/30970005/bufferedimage-to-javafx-image

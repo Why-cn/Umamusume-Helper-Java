@@ -77,5 +77,15 @@ public class PropertiesLoader {
         if (CapturingIntervalMM != null && !CapturingIntervalMM.isBlank()) {
             PropertiesStorage.CapturingIntervalMM = Integer.parseInt(CapturingIntervalMM);
         }
+
+        String DefaultHeight = properties.getProperty("DefaultHeight");
+        if (DefaultHeight != null && !DefaultHeight.isBlank()) {
+            PropertiesStorage.DefaultHeight = Integer.parseInt(DefaultHeight);
+        }
+
+        String DefaultWidth = properties.getProperty("DefaultWidth");
+        if (DefaultWidth != null && !DefaultWidth.isBlank()) {
+            PropertiesStorage.DefaultWidth = Integer.parseInt(DefaultWidth);
+        }
     }
 }

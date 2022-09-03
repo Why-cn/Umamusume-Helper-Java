@@ -22,12 +22,12 @@ public class ScrcpyHelper {
      * 2：无法连接，查看网络问题<p>
      * -1：未知问题
      */
-    public static int adbConnect() {
+    public static int adbConnect(String AndroidDeviceIP, String AndroidDevicePort) {
         String output = CMDHelper.oneTimeExecute(PropertiesStorage.ScrcpyPath +
                 "\\adb connect " +
-                PropertiesStorage.AndroidDeviceIP +
+                AndroidDeviceIP +
                 ":" +
-                PropertiesStorage.AndroidDevicePort);
+                AndroidDevicePort);
         if (output.contains("connected")) {
             return 0;
         } else if (output.contains("10061")) {
@@ -74,18 +74,18 @@ public class ScrcpyHelper {
     /**
      * 启动Scrcpy服务器，进行屏幕实时截取。<p>
      * 参数解释：<p>
-     * --always-on-top ：Scrcpy窗口固定在所有窗口上方
-     * --disable-screensaver ：安卓设备屏幕常亮？
-     * --max-fps= ：传输画面FPS上限
-     * --max-size= ：传输画面长边最大像素
-     * --no-clipboard-autosync ：关闭Scrcpy的自动剪贴板同步，这里没啥用
-     * --turn-screen-off ：立即关闭安卓设备屏幕
-     * --stay-awake ：当安卓设备连接电源时，保持唤醒
-     * --window-borderless ：Scrcpy窗口无边框化
-     * --window-title= ：自定义Scrcpy窗口标题
-     * --window-x=0 --window-y=0 :将Scrcpy窗口放在屏幕左上角
-     * --window-width= ：自定义Scrcpy窗口宽度（没用）
-     * --window-height= ：自定义Scrcpy窗口高度（没用）
+     * --always-on-top ：Scrcpy窗口固定在所有窗口上方<p>
+     * --disable-screensaver ：安卓设备屏幕常亮？<p>
+     * --max-fps= ：传输画面FPS上限<p>
+     * --max-size= ：传输画面长边最大像素<p>
+     * --no-clipboard-autosync ：关闭Scrcpy的自动剪贴板同步，这里没啥用<p>
+     * --turn-screen-off ：立即关闭安卓设备屏幕<p>
+     * --stay-awake ：当安卓设备连接电源时，保持唤醒<p>
+     * --window-borderless ：Scrcpy窗口无边框化<p>
+     * --window-title= ：自定义Scrcpy窗口标题<p>
+     * --window-x=0 --window-y=0 :将Scrcpy窗口放在屏幕左上角<p>
+     * --window-width= ：自定义Scrcpy窗口宽度（本方法里没用）<p>
+     * --window-height= ：自定义Scrcpy窗口高度（本方法里没用）<p>
      */
     public static void startScrcpy() {
         String scrcpyCLI = "\\scrcpy " +
